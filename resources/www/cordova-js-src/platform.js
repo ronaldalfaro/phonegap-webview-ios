@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-device-orientation.CompassError", function(require, exports, module) {
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -20,18 +19,13 @@ cordova.define("cordova-plugin-device-orientation.CompassError", function(requir
  *
 */
 
-/**
- *  CompassError.
- *  An error code assigned by an implementation when an error has occurred
- * @constructor
- */
-var CompassError = function(err) {
-    this.code = (err !== undefined ? err : null);
+module.exports = {
+    id: 'ios',
+    bootstrap: function () {
+        // Attach the console polyfill that is iOS-only to window.console
+        // see the file under plugin/ios/console.js
+        require('cordova/modulemapper').clobbers('cordova/plugin/ios/console', 'window.console');
+
+        require('cordova/channel').onNativeReady.fire();
+    }
 };
-
-CompassError.COMPASS_INTERNAL_ERR = 0;
-CompassError.COMPASS_NOT_SUPPORTED = 20;
-
-module.exports = CompassError;
-
-});
