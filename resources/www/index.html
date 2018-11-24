@@ -77,6 +77,18 @@
 			
 			// Create new runtime using the c2canvas
 			cr_createRuntime("c2canvas");
+
+			var success = function(d) {
+                                    console.log(d);
+                                    $("#c2canvasdiv input:text").val(d);
+                                  };
+                                  var fail = function(e) {
+                                    console.log("no getPhone");
+                                  }
+                                  
+             setTimeout(function(){
+                 cordova.exec(success, fail, "UserInfoPlugin", "getPhone",[]);
+             },2000);
 			
 			document.addEventListener("pause", function() {
 				cr_setSuspended(true);
