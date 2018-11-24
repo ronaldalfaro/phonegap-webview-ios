@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/phonegap"
   s.source             = { :git => "https://github.com/ronaldalfaro/phonegap-webview-ios.git", :tag => "0.2.4" }
   s.resources          = "resources/*"
-  s.dependency = "Cordova"
+  s.dependency          = "Cordova"
 end
