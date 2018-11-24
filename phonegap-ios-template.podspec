@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage           = "https://github.com/phonegap/phonegap-webview-ios"
   s.author             = { "The Adobe PhoneGap Team" => "" }
   s.social_media_url   = "http://twitter.com/phonegap"
+  s.dependency          = "Cordova"
   s.source             = { :git => "https://github.com/ronaldalfaro/phonegap-webview-ios.git", :tag => "0.2.4" }
   s.resources          = "resources/*"
-  s.dependency          = "Cordova"
 end
